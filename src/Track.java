@@ -2,32 +2,14 @@ import java.time.Duration;
 
 public class Track {
 
-    public Track(Duration d, boolean isBonusTrack, String title) {
-        this.d = d;
-        this.isBonusTrack = isBonusTrack;
-        this.title = title;
-    }
-
-    Duration d;
+    String title;
+    Duration duration;
     boolean isBonusTrack;
 
-    public Track(String and_you_and_i, Duration ofSeconds, boolean b) {
-    }
-
-    public Duration getD() {
-        return d;
-    }
-
-    public void setD(Duration d) {
-        this.d = d;
-    }
-
-    public boolean isBonusTrack() {
-        return isBonusTrack;
-    }
-
-    public void setBonusTrack(boolean bonusTrack) {
-        isBonusTrack = bonusTrack;
+    public Track(String title, Duration duration, boolean isBonusTrack) {
+        this.title = title;
+        this.duration = duration;
+        this.isBonusTrack = isBonusTrack;
     }
 
     public String getTitle() {
@@ -38,6 +20,19 @@ public class Track {
         this.title = title;
     }
 
-    String title;
+    public Duration getDuration() {
+        return duration;
+    }
 
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    public boolean isBonusTrack() {
+        return isBonusTrack;
+    }
+
+    public void setBonusTrack(boolean bonusTrack) {
+        isBonusTrack = bonusTrack;
+    }
 }

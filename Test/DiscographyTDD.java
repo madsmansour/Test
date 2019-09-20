@@ -1,32 +1,16 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(Arquillian.class)
-public class DiscographyTDD {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(Main.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-    }
+class DiscographyTDD {
 
     @Test
-    public void testTrackCreation() {
-        Track track = new Track("And you and I" , Duration.ofMinutes(10).plusSeconds(8), false);
-        String title = track.getTitle();
-        boolean bonusTrack = track.isBonusTrack();
-        assertEquals(title,"And you and I");
-        Duration d = track.getD();
-        assertFalse(bonusTrack);
-        assertEquals(Duration.ofMinutes(10).plusSeconds(8),d);
+    void testTrack() {
+        Track track = new Track("You and I", Duration.ofMinutes(10).plusSeconds(8), false);
+        assertEquals(track.getTitle(), "You and I");
+        assertEquals(track.getDuration(), Duration.ofMinutes(10).plusSeconds(8));
+        assertFalse(track.isBonusTrack());
     }
 }
