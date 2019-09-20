@@ -24,7 +24,7 @@ class DiscographyTDD {
     }
 
     @Test
-    void emptyRecordCreation() {
+    void testEmptyRecordCreation() {
         Record record = new Record("single","Under Production", LocalDate.of(2074,10,6));
         assertEquals("single",record.getType());
         assertEquals("Under production",record.getTitle());
@@ -32,4 +32,15 @@ class DiscographyTDD {
         assertEquals(0,record.getTrackCount());
         assertEquals(Duration.ofSeconds(0),record.getPlayTime());
     }
+
+    @Test
+    void testRecordCreationWithTwoTracks() {
+        Record record = new Record("album","Close to the Edge", LocalDate.of(1972,9,13));
+        assertEquals("album",record.getType());
+        assertEquals("Close to the Edge",record.getTitle());
+        assertEquals(LocalDate.of(1972,9,13),record.getReleaseDate());
+        assertEquals(2,record.getTrackCount());
+        assertEquals(Duration.ofMinutes(14).plusSeconds(20),record.getPlayTime());
+    }
+
 }
