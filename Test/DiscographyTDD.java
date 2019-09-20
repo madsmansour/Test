@@ -24,7 +24,7 @@ class DiscographyTDD {
     }
 
     @Test
-    void testTrack3() {
+    void emptyRecordCreation() {
         Record record = new Record("single","Under Production", LocalDate.of(2074,10,6));
         assertEquals("single",record.getType());
         assertEquals("Under production",record.getTitle());
