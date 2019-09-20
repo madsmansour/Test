@@ -4,10 +4,14 @@ public class Discography {
     }
 
     public String getArtistName() {
-        return "Future Artist";
+        return "Yes";
     }
 
     public int getRecordCount() {
-        return 0;
+        return 1;
+    }
+
+    public String getAlbum() {
+        return "Close to the Edge";
     }
 }
