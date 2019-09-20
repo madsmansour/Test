@@ -6,22 +6,22 @@ public class Record {
     }
 
     public String getType() {
-        return "single";
+        return "album";
     }
 
     public String getTitle() {
-        return "Under production";
+        return "Close to the Edge";
     }
 
     public LocalDate getReleaseDate() {
-        return LocalDate.of(2074,10,6);
+        return LocalDate.of(1972,9,13);
     }
 
     public int getTrackCount() {
-        return 0;
+        return 2;
     }
 
     public Duration getPlayTime() {
-        return Duration.ofSeconds(0);
+        return Duration.ofMinutes(14).plusSeconds(20);
     }
 }
