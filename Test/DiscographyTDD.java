@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,5 +21,15 @@ class DiscographyTDD {
         assertEquals(track2.getTitle(),"America");
         assertEquals(track2.duration, Duration.ofMinutes(4).plusSeconds(12));
         assertTrue(track2.isBonusTrack());
+    }
+
+    @Test
+    void testTrack3() {
+        Record record = new Record("single","Under Production", LocalDate.of(2074,10,6));
+        assertEquals("single",record.getType());
+        assertEquals("Under production",record.getTitle());
+        assertEquals(LocalDate.of(2074,10,6),record.getReleaseDate());
+        assertEquals(0,record.getTrackCount());
+        assertEquals(Duration.ofSeconds(0),record.getPlayTime());
     }
 }
