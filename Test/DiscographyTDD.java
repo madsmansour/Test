@@ -44,10 +44,10 @@ class DiscographyTDD {
     }
 
     @Test
-    void testEmptyFutureArtist(){
+    void testEmptyDiscography(){
         Discography discography = new Discography("Future Artist");
-        assertEquals("Future Artist", discography.getArtistName);
-        assertEquals(0,discography.getRecordCount);
+        assertEquals("Future Artist", discography.getArtistName());
+        assertEquals(0,discography.getRecordCount());
     }
 
 }
