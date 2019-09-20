@@ -43,4 +43,11 @@ class DiscographyTDD {
         assertEquals(Duration.ofMinutes(14).plusSeconds(20),record.getPlayTime());
     }
 
+    @Test
+    void testEmptyFutureArtist(){
+        Discography discography = new Discography("Future Artist");
+        assertEquals("Future Artist", discography.getArtistName);
+        assertEquals(0,discography.getRecordCount);
+    }
+
 }
