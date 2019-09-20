@@ -50,4 +50,12 @@ class DiscographyTDD {
         assertEquals(0,discography.getRecordCount());
     }
 
+    @Test
+    void testDiscographyWithOneRecord(){
+        Discography discography = new Discography("Yes");
+        assertEquals("Yes", discography.getArtistName());
+        assertEquals(1,discography.getRecordCount());
+        assertEquals("Close to the Edge", discography.getAlbum());
+    }
+
 }
